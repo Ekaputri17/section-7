@@ -1,0 +1,10 @@
+{
+"json": {
+    "enabled": false,
+    "output": "jsonreport/test/.json"
+}, 
+"stepDefinitions": [
+    "cypress/e2e/searchbox/searchbox.js",
+    "cypress/e2e/login/login.js"
+    ]
+}
