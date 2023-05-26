@@ -1,15 +1,13 @@
-import LoginPage from './login.page';
-
 const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
 
 Given('I open login page', function () {
-    LoginPage.visit();
+    cy.visit('http://zero.webappsecurity.com/login.html')
 })
 
 When('I submit login', function () {
-    LoginPage.fillUsername('username');
-    LoginPage.fillPassword('password');
-    LoginPage.signIn();
+    cy.get('#user_login').type('username')
+    cy.get('#user_password').type('password')
+    cy.contains('Sign in').click()
 })
 
 Then('I should see homepage', function () {
